@@ -1,0 +1,5 @@
+=calc-width($percent, $offset, $default: $percent)
+  width: #{$default}
+  width: -webkit-calc(#{$percent} - #{$offset})
+  width: -moz-calc(#{$percent} - #{$offset})
+  width: calc(#{$percent} - #{$offset})

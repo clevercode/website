@@ -1,0 +1,34 @@
+@media all and (max-width: 770px)
+  header
+    height: 16em
+
+    .girdle
+      width: 100%
+      padding: 0
+      h1
+        float: none
+        text-align: center
+
+      nav
+        float: none
+        li
+          width: 25%
+          text-align: center
+
+
+  #content
+    min-height: -webkit-calc(100% - 240px)
+    min-height: -moz-calc(100% - 240px)
+    min-height: calc(100% - 240px)
+    
+    &.home section.gallery
+      height: 250px
+    
+    &.work section.gallery
+      height: 250px
+
+    &.about
+      section.body-copy, section.team
+        float: none
+        width: 100%
+

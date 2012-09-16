@@ -1,0 +1,13 @@
+- @title = 'Contact'
+- @content_class = 'contact'
+
+%h1 Contact Us
+
+= semantic_form_for Email.new() do |f|
+  = f.inputs do
+    %li.header
+      .envelope
+      %h1 Contact Us
+    = f.input :name
+    = f.input :email
+    = f.input :message

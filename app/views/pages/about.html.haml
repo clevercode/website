@@ -1,0 +1,71 @@
+- @title = 'About'
+- @content_class = 'about'
+
+%section.body-copy
+  %h2 Hi there.
+  %p We are a small web studio in the lovely Winter Park, Florida. We design and create  beautiful interfaces.
+  %p We want you acheive anything you can dream of, and we've got more than enough brilliant minds to make it happen. In fact, you can see the entire team on this page.
+  %p Whether you've got a new idea or an old one just sitting there, we can bring it to, or back to, life. We love programming, so please, let us build you something.
+  %h2 Technologies.
+  %p
+    We use awesome things. Things like
+    #{link_to 'HAML', 'http://haml.info/', target: '_blank', title: 'HTML Abstraction Markup Language'},
+    #{link_to 'SASS', 'http://sass-lang.com/', target: '_blank', title: 'Syntactically Awesome Stylesheets'},
+    #{link_to 'Compass', 'http://compass-style.org/', target: '_blank', title: 'Compass'},
+    #{link_to 'jQuery', 'http://jquery.com/', target: '_blank', title: 'jQuery'},
+    #{link_to 'CoffeeScript', 'http://coffeescript.org/', target: '_blank', title: 'CoffeeScript'}, and
+    #{link_to 'Ruby on Rails', 'http://guides.rubyonrails.org/', target: '_blank', title: 'Ruby on Rails'}.
+    The tools of the trade, everything we need to make anything you can dream of.
+
+%section.team
+  .people
+    .person
+      = link_to 'team/olivier', class: 'olivier' do
+        %p The Frenchman
+      %p Olivier Lacan
+      = image_tag 'team/olivier.jpg'
+    .person
+      = link_to 'team/andrew', class: 'andrew' do
+        %p The Architect
+      %p Andrew Smith
+      = image_tag 'team/andrew.jpeg'
+    .person
+      = link_to 'team/zachary', class: 'zachary' do
+        %p The Integrator
+      %p Zachary Nicoll
+      = image_tag 'team/alyssa.jpg'
+    .person
+      = link_to 'team/alyssa', class: 'alyssa' do
+        %p The Designer
+      %p Alyssa Nicoll
+      = image_tag 'team/alyssa.jpg'
+
+    .person.person-double.olivier
+      %p The Frenchman
+      = image_tag 'team/olivier-double.jpg'
+    .person.person-double.andrew
+      %p The Architect
+      = image_tag 'team/andrew.jpeg'
+    .person.person-double.zachary
+      %p The Integrator
+      = image_tag 'team/zachary-double.jpg'
+    .person.person-double.alyssa
+      %p The Designer
+      = image_tag 'team/alyssa.jpg'
+
+  .person-bio.olivier
+    %h3 Olivier Lacan
+    %p When he's not using his Frenchness as an excuse to do all sorts of odd things around the office, Olivier splits his time between his two kittens and trying to help websites make sense, with pixels and words.
+
+  .person-bio.andrew
+    %h3 Andrew Smith
+    %p He likes to play with shiny things like Rails and Ruby to make our smidgy little web app ideas come to life. He is our little personal google. The man literally knows everything. At least, everything we've ever needed him to know.
+
+  .person-bio.zachary
+    %h3 Zachary Nicoll
+    %p It's hard to tell on this photo, but Zach is actually an amphibian. While it's a bit uncanny at first, that allows him to be very focused on the task at hand and solve problems all of us have already given up on. Zach is our lead architect. If you can dream of it, he can make it happen in your browser.
+
+  .person-bio.alyssa
+    %h3 Alyssa Nicoll
+    %p Alyssa is the newest member of our team and she does the designing for us. She is passionate about what she does and is always a hard worker as long as her coffee cup is filled.
+

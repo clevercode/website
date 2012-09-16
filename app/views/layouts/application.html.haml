@@ -1,0 +1,33 @@
+!!! 5
+%html
+  %head
+    %title cleverCode - #{@title}
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Rokkitt|Damion'
+    = javascript_include_tag 'http://underscorejs.org/underscore-min.js'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    %meta(name="description" content="cleverCode creates thoughtful web sites and applications in Winter Park, Florida.")
+    %meta(name="keywords" content="web, design, designer, interface, usable, usability, user experience, UI, UX, html, css, xhtml, javascript, jquery, js, coffeescript, ruby, rails, RoR, orlando, winter park, florida")
+    %meta(name="author" content="Zachary Nicoll, Olivier Lacan, Andrew Smith")
+
+  %body
+    %header
+      .girdle
+        %h1#logo= link_to '{} cleverCode', '/'
+        %nav
+          %ul
+            %li= link_to_unless_current 'Home', '/'
+            %li= link_to_unless_current 'About', '/about'
+            %li= link_to_unless_current 'Work', '/work'
+            %li= link_to_unless_current 'Contact', '/contact'
+
+    #content{ class: @content_class }
+      .girdle
+        = yield
+
+    %footer
+      .girdle
+        %p
+          &copy; 2012
+          %strong cleverCode

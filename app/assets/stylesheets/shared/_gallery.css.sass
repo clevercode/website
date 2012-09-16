@@ -1,0 +1,92 @@
+.image-container
+  position: relative
+
+  &:before, &:after
+    left: 0
+    right: 0
+    bottom: 0
+    position: absolute
+    content: ''
+    clear: both
+    height: 50px
+    display: block
+    background-color: rgba(0,0,0,0.25)
+    +border-radius(50%)
+    +box-shadow(0 0 100px 0 rgba(0,0,0,0.5))
+
+  &:after
+    left: -15px
+    right: -15px
+    bottom: -4px
+    height: 4px
+    background-color: rgba(0,0,0,0.2)
+    +box-shadow(0 0 10px 0 rgba(0,0,0,0.75))
+
+  section.gallery
+    width: 100%
+    height: 400px
+    z-index: 100
+    position: relative
+    padding: 15px
+    margin-bottom: 5em
+    background-color: #fff8ff
+    outline: 1px solid #fff
+    +box-shadow(0 0 7px rgba(0,0,0,0.45), inset 0 0 10px rgba(0,0,0,0.15))
+
+    .gallery-container
+      width: 100%
+      height: 100%
+      border: 1px solid #fff
+      +box-shadow(0 0 10px rgba(0,0,0,0.15))
+
+      .gallery-slider
+        top: 0px
+        position: absolute
+        height: 100%
+        min-width: 100%
+        overflow: hidden
+
+        div
+          top: 0px
+          left: 0px
+          position: absolute
+          width: 50%
+          height: 100%
+          background: image-url('work/ruby_heroes.jpg') no-repeat 50% 0
+          background-size: 140%
+          +box-shadow(inset 0 0 4px rgba(0,0,0,0.35))
+          &#roomies
+            background-image: image-url('work/roomies.jpg')
+          &#firehouse
+            background-image: image-url('work/firehouse.jpg')
+          &#feedpage
+            background-image: image-url('work/feedpage.png')
+          &#tumblefeed
+            background-image: image-url('work/tumblefeed.png')
+
+    .pagination
+      bottom: -30px
+      right: -webkit-calc(50% - 45px)
+      right: -moz-calc(50% - 45px)
+      right: calc(50% - 45px)
+      z-index: 100
+      position: absolute
+
+      li
+        width: 10px
+        height: 10px
+        float: left
+        margin-left: 10px
+
+        &.current-pagination a
+          background-color: $color-cc-purple
+
+        a
+          width: 100%
+          height: 100%
+          display: block
+          font-size: 0
+          color: transparent
+          +border-radius(50%)
+          background-color: #999099
+          +box-shadow(inset 0 1px 3px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,1))

@@ -1,0 +1,70 @@
+*
+  +box-sizing(border-box)
+
+html
+  color: #222
+  height: 100%
+  position: relative
+  text-shadow: rgba(255,255,255,0.65) 1px 1px 0
+  font: 62.5%/1.5 Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+  body
+    height: 100%
+    background-color: $color-light-gray
+    +background-image(linear-gradient($color-light-gray, $color-dark-gray))
+
+  strong
+    font-weight: bold
+
+.girdle
+  width: 80%
+  margin: 0 auto
+  padding: 0 1.0em
+  max-width: 1000px
+  &:after
+    content: ""
+    clear: both
+    display: block
+
+#content
+  background: image-url('grid.png') repeat left top
+  // background: image-url('content_bg.jpg') repeat left top
+  min-height: -webkit-calc(100% - 16em)
+  min-height: -moz-calc(100% - 16em)
+  min-height: calc(100% - 16em)
+  +box-shadow(inset 0 1px 0 rgba(255,255,255,0.25))
+  &:after
+    content: ""
+    clear: both
+    display: block
+
+  h1, h2, h3
+    font-size: 4.8em
+    line-height: 1.3em
+    letter-spacing: 0.05em
+    font-family: Berthold, sans-serif
+
+  h2
+    font-size: 3.0em
+    margin: 1.0em 0 0.3em
+    border-bottom: 5px solid #222
+    +box-shadow(0 1px 0 rgba(255,255,255,0.65))
+
+  h3
+    margin: 0.3em 0em
+    border-bottom: 2px solid #222
+    +box-shadow(0 1px 0 rgba(255,255,255,0.6))
+    font: 2em Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+  p
+    font-size: 1.5em
+    margin: 0 0 1.5em
+
+  a
+    color: #222
+    text-decoration: none
+    &:hover
+      text-shadow: rgba(0,0,0,0.5) 0px 0px 10px
+    &:active
+      color: $color-cc-light-purple
+

@@ -1,0 +1,49 @@
+header
+  height: 8em
+  border-bottom: 1px solid #fff
+  background-color: $color-cc-purple
+
+  h1
+    float: left
+    font-size: 3em
+    line-height: 2.666666667em
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    text-shadow: #000 1px 1px 5px
+    font-family: BertholdHeavy, sans-serif
+
+    a
+      color: white
+      text-decoration: none
+      &:hover
+        text-shadow: rgba(255,255,255,0.6) 0px 0px 20px
+      &:active
+        color: $color-cc-light-purple
+
+  nav
+    float: right
+    height: 8em
+
+    li
+      float: left
+      height: 8em
+      padding: 0 20px
+      font-size: 1.2em
+
+      a, &
+        color: white
+        line-height: 8em
+        font-weight: bold
+        text-decoration: none
+        text-transform: uppercase
+        text-shadow: black 1px 1px 5px
+        &:hover
+          text-shadow: white 0px 0px 15px
+        &:active
+          color: $color-cc-light-purple
+
+      &
+        color: $color-cc-gold
+        &:hover
+          text-shadow: none
+
