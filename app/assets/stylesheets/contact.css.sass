@@ -1,79 +1,145 @@
 #content.contact
   form
-    float: right
-    width: 50%
-    padding: 1.5em
-    background-color: #fff8ff
-    outline: 1px solid #fff
-    +box-shadow(0 0 7px rgba(0,0,0,0.45), inset 0 0 10px rgba(0,0,0,0.15))
-    font-family: 'Rokkitt', serif
+    z-index: 10
+    position: relative
+    width: 100%
+    padding: 4em
+    background: $white
+    +single-transition(opacity, 300ms, ease-in)
 
-    fieldset
-      padding: 1.5em
-      background: white
-      outline: 1px solid #fff
-      border: 1px solid rgba(0,0,0,0.35)
-      +box-shadow(0 0 10px rgba(0,0,0,0.15), inset 0 0 4px rgba(0,0,0,0.35))
+    fieldset ol li
+      padding: 0 1.5em
+      border-left: 3px solid transparent
+      +single-transition(border-color, 100ms, ease)
 
-    li.header
-      .envelope
-        width: 60px
-        height: 45px
-        display: inline-block
-        position: relative
-        border: 3px solid $color-dark-gray
-        +border-radius(3px)
+      &.string
+        float: left
+        width: 50%
+        height: 5em
+        +flex-box()
 
-        &:before, &:after
-          top: -13px
-          left: 8px
-          z-index: 50
-          position: absolute
-          width: 32px
-          height: 32px
-          content: ''
-          display: block
-          border: 3px solid $color-dark-gray
-          border-top-color: transparent
-          border-right-color: transparent
-          +border-radius(3px)
-          +box-shadow(inset 10px -10px 0 white)
-          +transform(rotate(-45deg) skew(10deg, 10deg))
+        &:nth-child(even)
+          padding-right: 0
 
-        &:after
-          top: auto
-          bottom: -15px
-          z-index: 25
-          border: 3px solid $color-dark-gray
-          border-left-color: transparent
-          border-bottom-color: transparent
-          +box-shadow(none)
+      &.text
+        float: left
+        width: 100%
+        margin: 4em 0 2em
 
-      h1
-        display: inline-block
-        font-family: 'Rokkitt', serif
+        label
+          width: 100%
 
-    li.input
-      abbr
-        display: none
+      &.action
+        padding: 0
+
+        input
+          float: right
+          width: auto
+          height: 1em
+          color: $gray-dark
+          cursor: pointer
+          line-height: 1em
+          text-transform: uppercase
+          +single-transition(color, 100ms, ease)
+
+          &:focus, &:hover
+            color: $cc-green-text
+
+          &:active
+            color: $cc-blue-text
+
+          &[disabled]
+            &, &:hover, &:focus, &:active
+              color: $gray
+              cursor: default
+
+      &:hover label, &.completed label
+        color: $cc-blue-text
+
+      &.focus
+        border-left-color: $cc-green
+
+        label
+          color: $cc-blue-text
+
+      &.error
+        border-left-color: $red
+
+        label
+          color: $red
+
+      label, input, textarea
+        margin: 0
+        padding: 0
+        border: none
+        font-size: 2.4em
+        line-height: 2.083333333em
+
+      label, input
+        height: 2.083333333em
 
       label
-        clear: left
-        float: left
-        color: shade($color-dark-gray, 20%)
-        display: inline-block
-        font-size: 1.7em
-        font-weight: bold
-        text-transform: uppercase
-        letter-spacing: 0.05em
+        margin-right: 0.625em
+        color: transparentize($cc-blue-text, 0.5)
+        +ellipsize()
+        +single-transition(color, 100ms, ease)
+
+        abbr
+          display: none
+
+      input, textarea
+        width: 50%
+        background: none
+        color: $gray-dark
+
+        &::-webkit-input-placeholder
+          font-size: 0.833333333em
+
+        &:focus
+          outline: none
+
+          &::-webkit-input-placeholder
+            opacity: 0
+            +single-transition(opacity, 500ms, ease, 500ms)
 
       input
-        padding: 0
-        margin: 0 0 0 0.5em
-        display: inline-block
-        background: none
-        outline: none
-        border: none
-        border-bottom: 1px dashed $color-dark-gray
-        font: 1.6em 'Damion', cursive
+        +flex-box-columns(1)
 
+      textarea
+        width: 100%
+        resize: none
+
+  .container
+    position: relative
+
+    .thanks
+      top: 0
+      left: 0
+      right: 0
+      z-index: 5
+      position: absolute
+      font-weight: bold
+      text-align: center
+      text-shadow: tint($cc-blue-dark, 25%) 0 1px 0
+
+    + p
+      margin: 0
+      font-size: 2.4em
+      line-height: 2em
+      text-shadow: tint($cc-blue-dark, 25%) 0 1px 0
+
+  @media screen and (max-width: 50.625em)
+    form fieldset ol li.string
+      height: auto
+      display: block
+
+      label, input
+        width: 100%
+        margin: 0
+
+  @media screen and (max-width: 30em)
+    form fieldset ol li
+      &.string, &.text
+        float: none
+        width: 100%
+        margin: 0 0 3em

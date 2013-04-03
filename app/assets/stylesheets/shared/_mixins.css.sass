@@ -3,3 +3,34 @@
   width: -webkit-calc(#{$percent} - #{$offset})
   width: -moz-calc(#{$percent} - #{$offset})
   width: calc(#{$percent} - #{$offset})
+
+=overflow-fix()
+  &:after
+    content: ""
+    clear: both
+    display: block
+
+=ellipsize()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=flex-box()
+  +display-box()
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: flex
+
+=flex-box-columns($columns)
+  +box-flex($columns)
+  -webkit-flex: $columns
+  -moz-flex: $columns
+  -ms-flex: $columns
+  flex: $columns
+
+=smooth-fonts()
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  -ms-font-smoothing: antialiased
+  font-smoothing: antialiased

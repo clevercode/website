@@ -1,70 +1,67 @@
 *
   +box-sizing(border-box)
+  +smooth-fonts()
 
 html
-  color: #222
-  height: 100%
   position: relative
-  text-shadow: rgba(255,255,255,0.65) 1px 1px 0
-  font: 62.5%/1.5 Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif
+  min-width: 32em
+  color: $white
+  font: 62.5%/1.5 'Avenir Medium', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif
 
   body
-    height: 100%
-    background-color: $color-light-gray
-    +background-image(linear-gradient($color-light-gray, $color-dark-gray))
+    background-color: $cc-blue-dark
+
+  @media screen and (max-width: 30em)
+    .girdle
+      padding: 0 2em
 
   strong
     font-weight: bold
+    font-weight: 600
 
 .girdle
-  width: 80%
+  width: 100%
   margin: 0 auto
-  padding: 0 1.0em
-  max-width: 1000px
+  padding: 0 0.9em
+  max-width: 96em
   &:after
     content: ""
     clear: both
     display: block
 
 #content
-  background: image-url('grid.png') repeat left top
-  // background: image-url('content_bg.jpg') repeat left top
-  min-height: -webkit-calc(100% - 16em)
-  min-height: -moz-calc(100% - 16em)
-  min-height: calc(100% - 16em)
-  +box-shadow(inset 0 1px 0 rgba(255,255,255,0.25))
-  &:after
-    content: ""
-    clear: both
-    display: block
+  padding: 5em 0 4em
+  background-color: $cc-blue
+  +overflow-fix()
+
+  @media screen and (max-width: 30em)
+    padding-top: 2em
 
   h1, h2, h3
     font-size: 4.8em
-    line-height: 1.3em
-    letter-spacing: 0.05em
-    font-family: Berthold, sans-serif
+    line-height: 1.5em
 
   h2
     font-size: 3.0em
     margin: 1.0em 0 0.3em
     border-bottom: 5px solid #222
-    +box-shadow(0 1px 0 rgba(255,255,255,0.65))
 
   h3
     margin: 0.3em 0em
     border-bottom: 2px solid #222
-    +box-shadow(0 1px 0 rgba(255,255,255,0.6))
-    font: 2em Futura, 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-size: 2em
 
   p
     font-size: 1.5em
+    font-weight: lighter
     margin: 0 0 1.5em
 
   a
-    color: #222
+    color: white
     text-decoration: none
     &:hover
-      text-shadow: rgba(0,0,0,0.5) 0px 0px 10px
+      text-shadow: white 0 0 1px
     &:active
-      color: $color-cc-light-purple
+      color: lighten($cc-blue-dark, 25%)
+      text-shadow: $cc-blue-dark 0 -1px 0
 

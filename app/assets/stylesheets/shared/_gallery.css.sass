@@ -1,92 +1,94 @@
 .image-container
   position: relative
+  margin-bottom: 5em
+  background-color: $white
+  overflow: auto
 
-  &:before, &:after
+  &:hover
+    .arrow.prev
+      left: 0
+
+    .arrow.next
+      right: 0
+
+  ul.gallery
+    position: relative
+    width: 400%
+
+    li
+      float: left
+      width: 25%
+      height: 40em
+      background: none no-repeat 50% 0
+      background-size: 140%
+      border: 2em solid $white
+
+  .arrow
+    top: 2em
+    bottom: 2em
+    z-index: 100
+    position: absolute
+    width: 5em
+    background: $white image-url('arrows/left.png') no-repeat center center
+    cursor: pointer
+    font-size: 1em
+    text-indent: -9999px
+
+    &.prev
+      left: -5em
+      +single-transition(left, 200ms, ease-in)
+      &:hover
+        background-image: image-url('arrows/left_hover.png')
+      &:active
+        background-image: image-url('arrows/left_active.png')
+
+    &.next
+      right: -5em
+      background-image: image-url('arrows/right.png')
+      +single-transition(right, 200ms, ease-in)
+      &:hover
+        background-image: image-url('arrows/right_hover.png')
+      &:active
+        background-image: image-url('arrows/right_active.png')
+  
+  .dots
     left: 0
     right: 0
-    bottom: 0
-    position: absolute
-    content: ''
-    clear: both
-    height: 50px
-    display: block
-    background-color: rgba(0,0,0,0.25)
-    +border-radius(50%)
-    +box-shadow(0 0 100px 0 rgba(0,0,0,0.5))
-
-  &:after
-    left: -15px
-    right: -15px
-    bottom: -4px
-    height: 4px
-    background-color: rgba(0,0,0,0.2)
-    +box-shadow(0 0 10px 0 rgba(0,0,0,0.75))
-
-  section.gallery
-    width: 100%
-    height: 400px
+    bottom: 3em
     z-index: 100
-    position: relative
-    padding: 15px
-    margin-bottom: 5em
-    background-color: #fff8ff
-    outline: 1px solid #fff
-    +box-shadow(0 0 7px rgba(0,0,0,0.45), inset 0 0 10px rgba(0,0,0,0.15))
+    position: absolute
+    text-align: center
 
-    .gallery-container
-      width: 100%
-      height: 100%
-      border: 1px solid #fff
-      +box-shadow(0 0 10px rgba(0,0,0,0.15))
+    li
+      width: 1em
+      height: 1em
+      display: inline-block
+      margin: 0 4px
+      border: 2px solid $white
+      +border-radius(6px)
+      +box-shadow(rgba(0,0,0,.3) 0 1px 2px)
+      cursor: pointer
+      opacity: .4
+      +transition(background .5s, opacity .5s)
+      text-indent: -999em
 
-      .gallery-slider
-        top: 0px
-        position: absolute
-        height: 100%
-        min-width: 100%
-        overflow: hidden
+      &.active
+        background: $white
+        opacity: 1
 
-        div
-          top: 0px
-          left: 0px
-          position: absolute
-          width: 50%
-          height: 100%
-          background: image-url('work/ruby_heroes.jpg') no-repeat 50% 0
-          background-size: 140%
-          +box-shadow(inset 0 0 4px rgba(0,0,0,0.35))
-          &#roomies
-            background-image: image-url('work/roomies.jpg')
-          &#firehouse
-            background-image: image-url('work/firehouse.jpg')
-          &#feedpage
-            background-image: image-url('work/feedpage.png')
-          &#tumblefeed
-            background-image: image-url('work/tumblefeed.png')
+#content
+  @media screen and (max-width: 30em)
+    .image-container
+      margin-bottom: 2em
 
-    .pagination
-      bottom: -30px
-      right: -webkit-calc(50% - 45px)
-      right: -moz-calc(50% - 45px)
-      right: calc(50% - 45px)
-      z-index: 100
-      position: absolute
+      ul.gallery li
+        height: 30em
+        border-width: 1em
 
-      li
-        width: 10px
-        height: 10px
-        float: left
-        margin-left: 10px
+      .arrow, .dots
+        display: none
 
-        &.current-pagination a
-          background-color: $color-cc-purple
-
-        a
-          width: 100%
-          height: 100%
-          display: block
-          font-size: 0
-          color: transparent
-          +border-radius(50%)
-          background-color: #999099
-          +box-shadow(inset 0 1px 3px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,1))
+  @media screen and (max-width: 20em)
+    .image-container
+      ul.gallery li
+        height: 20em
