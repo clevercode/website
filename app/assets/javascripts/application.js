@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require miniSlider
+//= require jquery.event.move
+//= require jquery.event.swipe
+//= require unslider
 //= require fittext
+//= require slabText.jquery
 //= require clevercode
 //= require_tree .
 

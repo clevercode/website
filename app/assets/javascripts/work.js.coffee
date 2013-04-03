@@ -1,19 +1,44 @@
-cleverCode.work = 
+cleverCode.work =
+  PROJECTS: [
+    'ruby-heroes'
+    'roomies'
+    'firehouse'
+    'feedpage'
+  ]
+
   init: ->
     @page = $('#content.work')
+    return unless @page.length
     @attachEventListeners()
-    @initSlider()
+    @_initSlider()
+    @_navigateToSlide()
 
   attachEventListeners: ->
 
-  initSlider: ->
-    @page.find('.gallery-slider').miniSlider
-      delay: 5000
-      containerClass: 'gallery-container'
-      showNavigation: false
-      onTransition: $.proxy @, 'onSliderTransition'
+  _initSlider: ->
+    slider = @page.find('.image-container').unslider
+      arrows: true
+      delay:  false
+      dots:   true
+      fluid:  true
+      keys:   true
+      pause:  true
+      before: $.proxy @, '_beforeSliderTransition'
+      after:  $.proxy @, '_afterSliderTransition'
 
-  onSliderTransition: (slide, number) ->
-    project = slide.prop 'id'
-    @page.find('h1').text project.split('-').join ' '
+    @_slider  = slider.data 'unslider'
+    @_slider.stop()
 
+  _beforeSliderTransition: ->
+    @_project = @PROJECTS[@_slider.i]
+    @page.find('.case-study').attr 'data-project', @_project
+
+  _afterSliderTransition: ->
+    window.location.hash = @_project
+
+  _navigateToSlide: ->
+    setTimeout =>
+      project = window.location.hash.replace '#', ''
+      if @PROJECTS.indexOf(project) isnt -1
+        @_slider.to @PROJECTS.indexOf project
+    , 1100
