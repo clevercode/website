@@ -1,5 +1,5 @@
 class CleverContact < ActionMailer::Base
-  default to: "zach@clevercode.net"
+  default to: "team@clevercode.net"
 
   def contact_email(params)
     @name    = params[:name]
