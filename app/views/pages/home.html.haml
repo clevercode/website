@@ -1,18 +1,33 @@
 - @title = 'Home'
 - @content_class = 'home'
-
-%h1#mantra Because regular code just isnt clever enough.
+- @mantra = 'Because regular code just isnt clever enough.'
 
 .image-container
-  %section.gallery
-    .gallery-slider
-      #ruby-heroes
-      #roomies
-      #firehouse
-      #feedpage
-      #tumblefeed
+  %ul.gallery
+    %li{ style: 'background-image: url(/assets/work/ruby_heroes.jpg)' }
+    %li{ style: 'background-image: url(/assets/work/roomies.jpg)' }
+    %li{ style: 'background-image: url(/assets/work/firehouse.jpg)' }
+    %li{ style: 'background-image: url(/assets/work/feedpage.jpg)' }
 
-%p Bacon ipsum dolor sit amet bresaola jowl jerky, leberkas bacon meatloaf biltong rump. Shank pastrami jowl biltong. Jowl frankfurter swine, meatball turkey bresaola tri-tip. Bresaola speck bacon meatball, prosciutto tenderloin ham ball tip. Spare ribs hamburger flank, pork pork loin pork chop shank tail shankle.
+%p
+  %strong Welcome to cleverCode.
+  We are a small web studio in the lovely Orlando, Florida.
+  = link_to 'We design and create beautiful interfaces.', work_path
+  We want you acheive anything you can dream of, and we've got
+  = link_to 'more than enough brilliant minds', root_path
+  to make it happen. Whether you've got a new idea or an old one just sitting
+  there, we can bring it to, or back to, life. We love programming,
+  = link_to 'so please, let us build you something.', contact_path
 
-%p Jowl short loin meatloaf, shoulder pork bresaola cow biltong ham pork belly ground round spare ribs pork chop. T-bone speck turkey, turducken beef meatball pork chop leberkas biltong frankfurter. Tail ham pork loin ground round chuck, pork shank corned beef hamburger beef ribs rump. Shankle fatback turducken, tri-tip bresaola drumstick boudin venison beef ribs speck kielbasa cow shank jerky t-bone.
+%section.team
+  %h1
+    %span.slabtext More&nbsp;than&nbsp;enough
+    %strong
+      %span.slabtext brilliant
+    %strong
+      %span.slabtext minds
 
+  %ul.people
+    %li.zach
+    %li.andrew
+    %li.alyssa

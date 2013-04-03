@@ -1,13 +1,19 @@
 - @title = 'Contact'
 - @content_class = 'contact'
+- @mantra = 'So please, let us build you something.'
 
-%h1 Contact Us
+.container
+  = semantic_form_for 'cleverContact' do |f|
+    = f.inputs do
+      = f.input :name, label: 'Your Name', placeholder: 'Bob Bobberson'
+      = f.input :email, label: 'Email Address', placeholder: 'bob@gmail.com'
+      = f.input :message, as: :text, label: 'Ask us something.', input_html: { rows: 3 }, placeholder: 'This is one of those totally cool questions everyone just sits around and waits for. The super awesome ones.'
 
-= semantic_form_for Email.new() do |f|
-  = f.inputs do
-    %li.header
-      .envelope
-      %h1 Contact Us
-    = f.input :name
-    = f.input :email
-    = f.input :message
+    = f.actions do
+      = f.action :submit, label: 'Send Message'
+
+  %h1.thanks Thanks, we’ll get back to you soon.
+
+%p
+  or email us at
+  = link_to 'contact@clevercode.net', 'mailto:contact@clevercode.net'
