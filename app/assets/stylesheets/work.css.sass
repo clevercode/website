@@ -11,6 +11,15 @@
       line-height: 1em
       text-shadow: tint($cc-blue-dark, 25%) 0 1px 0
 
+      a
+        padding: 0
+        +single-transition(padding, 200ms, ease-in)
+
+        &:hover
+          padding-right: 35px
+          background: url('work/arrow.png') no-repeat right center
+          text-shadow: inherit
+
     p
       font-size: 2.4em
       font-weight: light
@@ -32,29 +41,41 @@
         &:last-child
           margin: 0
 
+    &[data-project=professionals]
+      .professionals
+        display: block
+      ul li
+        background-position: center 0
+
+    &[data-project=unlock-her-freedom]
+      .unlock-her-freedom
+        display: block
+      ul li
+        background-position: center -12em
+
     &[data-project=ruby-heroes]
       .ruby-heroes
         display: block
       ul li
-        background-position: center 0
+        background-position: center -24em
 
     &[data-project=roomies]
       .roomies
         display: block
       ul li
-        background-position: center -12em
+        background-position: center -36em
 
     &[data-project=firehouse]
       .firehouse
         display: block
       ul li
-        background-position: center -24em
+        background-position: center -48em
 
     &[data-project=feedpage]
       .feedpage
         display: block
       ul li
-        background-position: center -36em
+        background-position: center -60em
 
   @media screen and (max-width: 30em)
     .case-study ul

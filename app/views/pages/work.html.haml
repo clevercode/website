@@ -1,17 +1,37 @@
 - @title = 'Work'
-- @content_class = 'work ruby-heroes'
+- @content_class = 'work professionals'
 - @mantra = 'We design and create beautiful interfaces.'
 
 .image-container
   %ul.gallery
+    %li{ style: 'background-image: url(/assets/work/professionals.jpg)' }
+    %li{ style: 'background-image: url(/assets/work/unlock_her_freedom.jpg)' }
     %li{ style: 'background-image: url(/assets/work/ruby_heroes.jpg)' }
     %li{ style: 'background-image: url(/assets/work/roomies.jpg)' }
     %li{ style: 'background-image: url(/assets/work/firehouse.jpg)' }
     %li{ style: 'background-image: url(/assets/work/feedpage.jpg)' }
 
-%section.case-study{ data: { project: 'ruby-heroes' }}
+%section.case-study{ data: { project: 'professionals' }}
+  .project.professionals
+    %h1= link_to 'Professionals', 'http://drdannicoll.com/', target: '_blank'
+    %p
+      This is cleverCode's first “template” project. We built the whole site to
+      be reusable and themable, in order to be as flexible as possible. This
+      site, complete with an entire content management system, is available for
+      customization and purchase. Please contact us if you would like to find
+      out some more information.
+
+  .project.unlock-her-freedom
+    %h1= link_to 'Unlock Her Freedom', 'https://unlockherfreedom.com/', target: '_blank'
+    %p
+      Unlock Her Freedom was our first completely
+      %abbr{ title: 'Non-Profit Organization' } NPO
+      project. They wanted a simple site to raise awareness and accept
+      donations, and we delivered. We thoroughly enjoyed working with the UHF
+      team, we've all got some big plans for this site's future.
+
   .project.ruby-heroes
-    %h1 Ruby Hero Awards
+    %h1= link_to 'Ruby Hero Awards', 'http://rubyheroes.com/', target: '_blank'
     %p
       We were approached to come up with a redesign of rubyheroes.com. At the
       time, we had a graphic designer at hand, so we were able to produce a
@@ -39,7 +59,7 @@
     %p
       Feedpage was one of the very first projects we worked on at cleverCode. It
       was a web app designed to offer customers one location from which they
-      could launch and communicate on the marketing campaigns directly to their
+      could launch and communicate their marketing campaigns directly to their
       customers on social networks.
 
   %ul

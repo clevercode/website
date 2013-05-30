@@ -1,5 +1,7 @@
 cleverCode.work =
   PROJECTS: [
+    'professionals'
+    'unlock-her-freedom'
     'ruby-heroes'
     'roomies'
     'firehouse'
